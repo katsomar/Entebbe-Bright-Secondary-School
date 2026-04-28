@@ -76,63 +76,107 @@ const AcademicsPage = () => {
         
         {/* Subtle Bottom Border Detail */}
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-main/30 to-transparent" />
-      </section>
+      </section>      {/* Curriculum Showcase */}
+      <section className="py-32 bg-white relative overflow-hidden">
+        {/* Large Decorative Background Text */}
+        <div className="absolute top-1/2 left-0 w-full text-center pointer-events-none opacity-[0.03] select-none">
+          <div className="text-[30vw] font-display font-black text-charcoal leading-none">
+            ACADEMIA
+          </div>
+        </div>
 
-      {/* Curriculum Tabs */}
-      <section className="py-24 bg-cream">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 relative z-10">
           <ScrollReveal>
-            <div className="text-center mb-16">
-              <SectionLabel>OUR CURRICULUM</SectionLabel>
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-charcoal">
-                Tailored Learning for <span className="text-gold-deep italic">Every Level</span>.
+            <div className="text-center mb-24">
+              <div className="flex items-center justify-center space-x-4 mb-6">
+                <div className="h-px w-12 bg-gold-main/40" />
+                <span className="text-gold-main font-body text-sm font-bold tracking-[0.3em] uppercase">The Learning Path</span>
+                <div className="h-px w-12 bg-gold-main/40" />
+              </div>
+              <h2 className="text-5xl md:text-7xl font-display font-bold text-charcoal leading-tight">
+                Our Academic <span className="text-gold-main italic">Curriculum</span>.
               </h2>
             </div>
           </ScrollReveal>
 
           <Tabs.Root defaultValue="olevel" className="w-full">
-            <ScrollReveal>
-              <Tabs.List className="flex justify-center space-x-4 mb-16 border-b border-gold-main/10">
-                {["primary", "olevel", "alevel"].map((tab) => (
-                  <Tabs.Trigger
-                    key={tab}
-                    value={tab}
-                    className="px-8 py-4 text-sm font-bold uppercase tracking-widest transition-all relative data-[state=active]:text-gold-deep group"
-                  >
-                    {tab === "olevel" ? "O-Level" : tab === "alevel" ? "A-Level" : "Primary"}
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gold-deep scale-x-0 group-data-[state=active]:scale-x-100 transition-transform duration-300" />
-                  </Tabs.Trigger>
-                ))}
-              </Tabs.List>
-            </ScrollReveal>
+            <div className="flex flex-col lg:flex-row gap-20">
+              {/* Vertical Side Navigation */}
+              <div className="lg:w-1/4">
+                <ScrollReveal direction="left">
+                  <Tabs.List className="flex flex-col space-y-4">
+                    {[
+                      { id: "primary", label: "Primary Education", sub: "Foundation Years" },
+                      { id: "olevel", label: "O-Level (S1-S4)", sub: "Core Development" },
+                      { id: "alevel", label: "A-Level (S5-S6)", sub: "Advanced Specialization" }
+                    ].map((tab) => (
+                      <Tabs.Trigger
+                        key={tab.id}
+                        value={tab.id}
+                        className="flex flex-col items-start p-8 rounded-[2rem] text-left transition-all duration-500 group border border-transparent data-[state=active]:bg-charcoal data-[state=active]:border-gold-main/30 data-[state=active]:shadow-2xl"
+                      >
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-gold-main mb-1 group-data-[state=active]:text-gold-main group-data-[state=inactive]:text-charcoal/40 transition-colors">
+                          {tab.sub}
+                        </span>
+                        <span className="text-xl font-display font-bold group-data-[state=active]:text-white group-data-[state=inactive]:text-charcoal transition-colors">
+                          {tab.label}
+                        </span>
+                      </Tabs.Trigger>
+                    ))}
+                  </Tabs.List>
+                </ScrollReveal>
+              </div>
 
-            {Object.entries(curriculum).map(([key, data]) => (
-              <Tabs.Content key={key} value={key} className="animate-in fade-in slide-in-from-bottom-4 duration-500 outline-none">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                  <div className="relative aspect-video lg:aspect-square rounded-3xl overflow-hidden shadow-gold-lg">
-                    <Image src={data.image} alt={data.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
-                  </div>
-                  <div>
-                    <h3 className="text-4xl font-heading font-bold text-charcoal mb-6">{data.title}</h3>
-                    <p className="text-text-muted text-lg leading-relaxed mb-10">{data.desc}</p>
-                    
-                    <div className="grid grid-cols-2 gap-4 mb-10">
-                      {data.subjects.map((subject) => (
-                        <div key={subject} className="flex items-center space-x-3 text-text-muted bg-white p-4 rounded-2xl border border-gold-main/5 hover:border-gold-main/30 transition-colors">
-                          <div className="w-2 h-2 rounded-full bg-gold-main" />
-                          <span className="text-sm font-bold">{subject}</span>
+              {/* Immersive Content Area */}
+              <div className="lg:w-3/4">
+                {Object.entries(curriculum).map(([key, data]) => (
+                  <Tabs.Content key={key} value={key} className="animate-in fade-in slide-in-from-right-8 duration-700 outline-none">
+                    <div className="grid grid-cols-1 xl:grid-cols-12 gap-12">
+                      <div className="xl:col-span-7">
+                        <h3 className="text-4xl font-display font-bold text-charcoal mb-6">{data.title}</h3>
+                        <p className="text-charcoal/60 text-lg leading-relaxed mb-12 max-w-2xl">
+                          {data.desc}
+                        </p>
+                        
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          {data.subjects.map((subject, idx) => (
+                            <motion.div 
+                              key={subject}
+                              initial={{ opacity: 0, y: 10 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ delay: idx * 0.05 }}
+                              className="flex items-center space-x-4 p-5 rounded-2xl bg-cream/40 border border-gold-main/10 hover:border-gold-main/30 hover:bg-white hover:shadow-gold-sm transition-all group"
+                            >
+                              <div className="w-8 h-8 rounded-full bg-gold-main/10 flex items-center justify-center text-gold-main text-[10px] font-bold group-hover:bg-gold-main group-hover:text-white transition-all">
+                                {idx + 1}
+                              </div>
+                              <span className="text-sm font-bold text-charcoal/80">{subject}</span>
+                            </motion.div>
+                          ))}
                         </div>
-                      ))}
+                        
+                        <div className="mt-12">
+                          <GoldButton className="px-10 py-5">
+                            <Download size={20} className="mr-3" />
+                            Full Prospectus PDF
+                          </GoldButton>
+                        </div>
+                      </div>
+
+                      <div className="xl:col-span-5 relative">
+                        <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border-[12px] border-white">
+                          <Image src={data.image} alt={data.title} fill className="object-cover" />
+                        </div>
+                        {/* Decorative floating badge */}
+                        <div className="absolute -top-6 -right-6 w-24 h-24 bg-gold-main rounded-full flex items-center justify-center text-white shadow-2xl border-4 border-white rotate-12">
+                          <GraduationCap size={40} />
+                        </div>
+                      </div>
                     </div>
-                    
-                    <GoldButton className="w-full md:w-auto">
-                      <Download size={18} className="mr-3" />
-                      Download Curriculum PDF
-                    </GoldButton>
-                  </div>
-                </div>
-              </Tabs.Content>
-            ))}
+                  </Tabs.Content>
+                ))}
+              </div>
+            </div>
           </Tabs.Root>
         </div>
       </section>
@@ -158,41 +202,92 @@ const AcademicsPage = () => {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Exam Results */}
-      <section className="py-24 bg-charcoal text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
-          <Calculator size={400} className="text-gold-main absolute -right-20 -top-20 rotate-12" />
-        </div>
+      </section>      {/* Exam Results - Circular Gallery */}
+      <section className="py-32 bg-charcoal text-white relative overflow-hidden">
+        {/* Background Decorative Element */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gold-main/5 blur-[120px] rounded-full pointer-events-none" />
         
-        <div className="container mx-auto px-6 relative z-10 text-center">
-          <ScrollReveal>
-            <SectionLabel>OUR TRACK RECORD</SectionLabel>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-16">
-              Consistent <span className="text-gold-main italic">Academic Success</span>.
-            </h2>
-          </ScrollReveal>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-24">
+            <ScrollReveal>
+              <div className="flex items-center justify-center space-x-4 mb-6">
+                <div className="h-px w-10 bg-gold-main/40" />
+                <span className="text-gold-main font-body text-xs font-bold tracking-[0.3em] uppercase">Our Track Record</span>
+                <div className="h-px w-10 bg-gold-main/40" />
+              </div>
+              <h2 className="text-5xl md:text-7xl font-display font-bold text-white leading-tight">
+                Consistent <span className="text-gold-main italic">Academic Success</span>.
+              </h2>
+            </ScrollReveal>
+          </div>
 
-          <div className="max-w-4xl mx-auto space-y-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24">
             {[
-              { year: "2025", rate: "99.2%", label: "First Grade (O-Level)" },
-              { year: "2024", rate: "98.5%", label: "University Entry (A-Level)" },
-              { year: "2023", rate: "97.8%", label: "Overall Pass Rate" },
+              { year: "2025", rate: 99.2, label: "First Grade", sub: "O-Level (UCE)" },
+              { year: "2024", rate: 98.5, label: "University Entry", sub: "A-Level (UACE)" },
+              { year: "2023", rate: 97.8, label: "Overall Pass Rate", sub: "National Rank" },
             ].map((res, i) => (
               <ScrollReveal key={i} delay={i * 0.2}>
-                <div className="relative">
-                  <div className="flex justify-between items-center mb-4 font-mono uppercase tracking-widest text-xs text-white/60">
-                    <span>Year {res.year} — {res.label}</span>
-                    <span className="text-gold-main font-bold text-lg">{res.rate}</span>
-                  </div>
-                  <div className="h-4 bg-white/5 rounded-full overflow-hidden">
+                <div className="flex flex-col items-center text-center group">
+                  {/* Premium Circular Ring */}
+                  <div className="relative w-56 h-56 mb-10 flex items-center justify-center">
+                    <svg className="w-full h-full rotate-[-90deg]">
+                      {/* Outer Track */}
+                      <circle
+                        cx="112"
+                        cy="112"
+                        r="100"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        fill="transparent"
+                        className="text-white/5"
+                      />
+                      {/* Progress Track */}
+                      <motion.circle
+                        cx="112"
+                        cy="112"
+                        r="100"
+                        stroke="url(#goldGradient)"
+                        strokeWidth="8"
+                        strokeLinecap="round"
+                        fill="transparent"
+                        strokeDasharray={2 * Math.PI * 100}
+                        initial={{ strokeDashoffset: 2 * Math.PI * 100 }}
+                        whileInView={{ strokeDashoffset: 2 * Math.PI * 100 * (1 - res.rate / 100) }}
+                        transition={{ duration: 2, ease: "easeOut", delay: 0.5 }}
+                      />
+                      <defs>
+                        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" stopColor="#C5A059" />
+                          <stop offset="100%" stopColor="#D4AF37" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
+
+                    {/* Glowing Diamond Tip */}
                     <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: res.rate }}
-                      transition={{ duration: 1.5, delay: 0.5 }}
-                      className="h-full bg-gradient-gold rounded-full shadow-gold-glow"
-                    />
+                      initial={{ opacity: 0, rotate: -90 }}
+                      whileInView={{ opacity: 1, rotate: (res.rate / 100) * 360 - 90 }}
+                      transition={{ duration: 2, ease: "easeOut", delay: 0.5 }}
+                      className="absolute inset-0 pointer-events-none"
+                    >
+                      <div className="absolute top-[4px] left-1/2 -translate-x-1/2 w-4 h-4 bg-gold-main rotate-45 shadow-[0_0_15px_rgba(212,175,55,0.8)]" />
+                    </motion.div>
+
+                    {/* Center Percentage */}
+                    <div className="absolute inset-0 flex flex-col items-center justify-center">
+                      <div className="flex items-baseline">
+                        <span className="text-5xl font-display font-bold text-white">{res.rate}</span>
+                        <span className="text-gold-main font-display font-bold text-xl ml-0.5">%</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Label Group */}
+                  <div className="space-y-2">
+                    <span className="text-gold-main font-body text-[10px] font-bold uppercase tracking-[0.4em] block mb-2">Year {res.year}</span>
+                    <h4 className="text-2xl font-display font-bold text-white group-hover:text-gold-main transition-colors">{res.label}</h4>
+                    <p className="text-white/40 text-sm font-body uppercase tracking-widest">{res.sub}</p>
                   </div>
                 </div>
               </ScrollReveal>
