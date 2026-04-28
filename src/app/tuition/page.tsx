@@ -30,7 +30,7 @@ const TuitionPage = () => {
       {/* Hero Section */}
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=2071"
+          src="/hero/h1.png"
           alt="Tuition Hero"
           fill
           sizes="100vw"

@@ -6,9 +6,9 @@ import GoldButton from "@/components/ui/GoldButton";
 import { ChevronDown } from "lucide-react";
 
 const heroImages = [
-  "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070",
-  "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2070",
-  "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=2070",
+  "/hero/h1.png",
+  "/hero/h2.png",
+  "/hero/h3.png",
 ];
 
 const HeroSection = () => {

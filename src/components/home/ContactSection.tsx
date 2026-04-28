@@ -121,7 +121,7 @@ const ContactSection = () => {
                 <div 
                   className="absolute inset-0 bg-gold-light/20 flex flex-col items-center justify-center text-gold-deep p-12 text-center"
                   style={{
-                    backgroundImage: 'url("https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=2066&auto=format&fit=crop")',
+                    backgroundImage: 'url("/hero/h1.png")',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                   }}

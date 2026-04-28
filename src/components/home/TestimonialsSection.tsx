@@ -12,19 +12,19 @@ const testimonials = [
   {
     name: "Sarah Nakato",
     role: "Parent, S.4 Student",
-    image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=1974&auto=format&fit=crop",
+    image: "/wwa/wwa1.png",
     quote: "Entebbe Bright has transformed my daughter's approach to learning. The teachers are incredibly supportive and the environment is truly inspiring.",
   },
   {
     name: "James Okello",
     role: "Alumni, Class of 2020",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop",
+    image: "/hero/h2.png",
     quote: "The foundation I received here was pivotal for my success in University. The school taught me leadership and critical thinking skills I use every day.",
   },
   {
     name: "Dr. Mary Atwine",
     role: "Education Consultant",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1976&auto=format&fit=crop",
+    image: "/hero/h3.png",
     quote: "A school that truly understands the needs of the 21st-century learner. Their curriculum is forward-thinking and execution is flawless.",
   },
 ];

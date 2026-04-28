@@ -10,25 +10,25 @@ const leadership = [
   {
     name: "Dr. Richard Ssekandi",
     role: "Director",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop",
+    image: "/hero/h1.png",
     quote: "Our goal is to create a generation of thinkers who are not afraid to challenge the status quo and lead with integrity.",
   },
   {
     name: "Mrs. Alice Namutebi",
     role: "Principal",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1976&auto=format&fit=crop",
+    image: "/hero/h2.png",
     quote: "Academic excellence is the foundation, but character development is the soul of Entebbe Bright Secondary School.",
   },
   {
     name: "Mr. Joseph Okello",
     role: "Head Teacher",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop",
+    image: "/hero/h3.png",
     quote: "We believe in the potential of every student. Our role is to provide the spark that ignites their passion for discovery.",
   },
   {
     name: "Ms. Brenda Atwine",
     role: "Director of Studies (DOS)",
-    image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=1974&auto=format&fit=crop",
+    image: "/wwa/wwa1.png",
     quote: "Curriculum innovation and practical learning are at the heart of our academic strategy for the 21st century.",
   },
 ];
@@ -39,7 +39,7 @@ const AboutPage = () => {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070"
+          src="/hero/h1.png"
           alt="About Hero"
           fill
           sizes="100vw"
@@ -68,7 +68,7 @@ const AboutPage = () => {
             <ScrollReveal direction="left">
               <div className="relative aspect-square rounded-3xl overflow-hidden shadow-gold-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=2071"
+                  src="/wwa/wwa1.png"
                   alt="School Ethos"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"

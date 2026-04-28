@@ -18,7 +18,7 @@ const WhoWeAreSection = () => {
             <ScrollReveal direction="left">
               <div className="relative rounded-2xl overflow-hidden shadow-gold-lg border-4 border-white">
                 <Image
-                  src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=2071"
+                  src="/wwa/wwa1.png"
                   alt="School Campus"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"

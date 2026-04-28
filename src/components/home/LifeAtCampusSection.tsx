@@ -8,28 +8,28 @@ import GoldButton from "@/components/ui/GoldButton";
 
 const campusLife = [
   {
-    src: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070",
+    src: "/hero/h1.png",
     alt: "Students in Classroom",
     category: "Academics",
     title: "Modern Learning Environments",
     className: "lg:col-span-2 lg:row-span-2",
   },
   {
-    src: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2076",
+    src: "/hero/h2.png",
     alt: "Sports Day",
     category: "Sports",
     title: "Athletic Excellence",
     className: "lg:col-span-1 lg:row-span-1",
   },
   {
-    src: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2070",
+    src: "/hero/h3.png",
     alt: "Science Lab",
     category: "Innovation",
     title: "Practical Discovery",
     className: "lg:col-span-1 lg:row-span-1",
   },
   {
-    src: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=2071",
+    src: "/wwa/wwa1.png",
     alt: "School Library",
     category: "Library",
     title: "Infinite Knowledge",

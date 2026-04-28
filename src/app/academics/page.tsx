@@ -14,19 +14,19 @@ const curriculum = {
     title: "Primary Education",
     desc: "A solid foundation focused on literacy, numeracy, and basic life skills in a nurturing environment.",
     subjects: ["English Language", "Mathematics", "Science", "Social Studies", "Religious Education", "Physical Education"],
-    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop"
+    image: "/hero/h1.png"
   },
   olevel: {
     title: "O-Level (S1 - S4)",
     desc: "The Uganda National Curriculum designed to prepare students for the UCE examinations through diverse subject choices.",
     subjects: ["English", "Mathematics", "Biology", "Chemistry", "Physics", "History", "Geography", "ICT", "Entrepreneurship", "Art"],
-    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2070&auto=format&fit=crop"
+    image: "/hero/h2.png"
   },
   alevel: {
     title: "A-Level (S5 - S6)",
     desc: "Advanced specialization in Arts or Sciences preparing students for University entrance and global opportunities.",
     subjects: ["General Paper", "Sub-Maths", "Biology", "Chemistry", "Physics", "Literature", "Economics", "History", "Divinity"],
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop"
+    image: "/hero/h3.png"
   }
 };
 
@@ -36,7 +36,7 @@ const AcademicsPage = () => {
       {/* Hero */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070"
+          src="/hero/h1.png"
           alt="Academics Hero"
           fill
           sizes="100vw"

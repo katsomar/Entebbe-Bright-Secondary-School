@@ -11,15 +11,15 @@ import { motion, AnimatePresence } from "framer-motion";
 const categories = ["All", "Sports", "Academics", "Events", "Arts", "Trips"];
 
 const galleryImages = [
-  { src: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=2070", category: "Academics", title: "Students in Study Group" },
-  { src: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2076", category: "Sports", title: "Inter-House Football Final" },
-  { src: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2070", category: "Academics", title: "Chemistry Lab Session" },
-  { src: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070", category: "Academics", title: "Research Project" },
-  { src: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=2071", category: "Sports", title: "Basketball Championship" },
-  { src: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070", category: "Events", title: "ICT Lab Opening" },
-  { src: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2070", category: "Events", title: "Annual Science Fair" },
-  { src: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070", category: "Trips", title: "Geographical Field Trip" },
-  { src: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?q=80&w=2070", category: "Arts", title: "Drama Performance" },
+  { src: "/hero/h1.png", category: "Academics", title: "Students in Study Group" },
+  { src: "/hero/h2.png", category: "Sports", title: "Inter-House Football Final" },
+  { src: "/hero/h3.png", category: "Academics", title: "Chemistry Lab Session" },
+  { src: "/wwa/wwa1.png", category: "Academics", title: "Research Project" },
+  { src: "/hero/h1.png", category: "Sports", title: "Basketball Championship" },
+  { src: "/hero/h2.png", category: "Events", title: "ICT Lab Opening" },
+  { src: "/hero/h3.png", category: "Events", title: "Annual Science Fair" },
+  { src: "/wwa/wwa1.png", category: "Trips", title: "Geographical Field Trip" },
+  { src: "/hero/h1.png", category: "Arts", title: "Drama Performance" },
 ];
 
 const GalleryPage = () => {
