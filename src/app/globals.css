@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  /* Primary Gold Family */
+  --color-gold-deep: #B8860B;
+  --color-gold-main: #D4AF37;
+  --color-gold-bright: #FFD700;
+  --color-gold-light: #FFF0A0;
+
+  /* Orange Family */
+  --color-orange-deep: #C45C00;
+  --color-orange-main: #F07820;
+  --color-orange-light: #FFB347;
+
+  /* Green Family */
+  --color-green-school: #4CAF6E;
+  --color-green-soft: #7DC99A;
+  --color-green-tint: #E8F5ED;
+
+  /* Neutrals */
+  --color-cream: #FFFDF5;
+  --color-charcoal: #1C1A14;
+  --color-text-muted: #6B5E3E;
+
+  /* Fonts */
+  --font-display: "Playfair Display", serif;
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: "DM Sans", sans-serif;
+  --font-mono: "Space Mono", monospace;
+
+  /* Shadows */
+  --shadow-gold-sm: 0 2px 8px rgba(212, 175, 55, 0.3);
+  --shadow-gold-md: 0 4px 20px rgba(212, 175, 55, 0.4);
+  --shadow-gold-lg: 0 8px 40px rgba(212, 175, 55, 0.5);
+  --shadow-gold-glow: 0 0 30px rgba(255, 215, 0, 0.4);
+
+  /* Animations */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-gold: pulseGold 2s ease-in-out infinite;
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-gradient-shift: gradientShift 8s ease infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  @keyframes pulseGold {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(212,175,55,0.7); }
+    50% { box-shadow: 0 0 0 12px rgba(212,175,55,0); }
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+}
+
+:root {
+  --gold-deep: #B8860B;
+  --gold-main: #D4AF37;
+  --gold-bright: #FFD700;
+  --gold-light: #FFF0A0;
+  --orange-deep: #C45C00;
+  --orange-main: #F07820;
+  --orange-light: #FFB347;
+  --green-main: #4CAF6E;
+  --green-soft: #7DC99A;
+  --green-tint: #E8F5ED;
+  --cream: #FFFDF5;
+  --charcoal: #1C1A14;
+  --text-muted: #6B5E3E;
+  --gradient-hero: linear-gradient(135deg, #1C1208 0%, #3D2A00 40%, #1A2E12 100%);
+  --gradient-gold: linear-gradient(90deg, #B8860B, #FFD700, #F07820);
+  --gradient-section: linear-gradient(180deg, #FFFDF5 0%, #FFF8E7 100%);
+}
+
+@layer base {
+  body {
+    @apply bg-cream text-charcoal font-body;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+.glass-card {
+  @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+
+.gold-glow {
+  @apply shadow-gold-glow;
+}
+
+.bg-gradient-gold {
+  background: var(--gradient-gold);
+}
+
+.bg-gradient-hero {
+  background: var(--gradient-hero);
+}
+
+.bg-gradient-section {
+  background: var(--gradient-section);
+}
