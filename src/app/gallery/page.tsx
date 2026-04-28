@@ -31,35 +31,61 @@ const GalleryPage = () => {
     : galleryImages.filter(img => img.category === activeCategory);
 
   return (
-    <div className="pt-24 flex flex-col min-h-screen bg-cream">
-      {/* Hero */}
-      <section className="py-20 bg-charcoal text-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
-        <div className="container mx-auto px-6 relative z-10">
-          <ScrollReveal direction="down">
-            <SectionLabel>OUR WORLD IN PHOTOS</SectionLabel>
-            <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-8">
-              Capturing <span className="text-gold-main italic">Greatness</span>
-            </h1>
+    <div className="bg-white selection:bg-gold-main/30 flex flex-col min-h-screen">
+      {/* Cinematic Banner */}
+      <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden bg-charcoal pt-24">
+        {/* Background Effects */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/hero/h2.png"
+            alt="Gallery Background"
+            fill
+            priority
+            className="object-cover opacity-30 scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-transparent to-charcoal" />
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10 text-center">
+          <ScrollReveal>
+            {/* Elegant Letter Reveal Title */}
+            <div className="overflow-hidden mb-6">
+              <motion.h1 
+                initial={{ y: 80 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                className="text-5xl md:text-8xl font-display font-bold text-white leading-none"
+              >
+                Capturing <span className="text-gold-main italic leading-tight">Greatness</span>
+              </motion.h1>
+            </div>
             
-            {/* Filters */}
-            <div className="flex flex-wrap justify-center gap-4 mt-12">
+            {/* Redesigned Category Filters */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="flex flex-wrap justify-center gap-3 mt-12 max-w-4xl mx-auto"
+            >
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-8 py-2 rounded-full text-xs font-mono font-bold uppercase tracking-widest transition-all duration-300 border ${
+                  className={`px-8 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-[0.3em] transition-all duration-500 border ${
                     activeCategory === cat
-                      ? "bg-gold-main border-gold-main text-charcoal shadow-gold-glow"
-                      : "bg-transparent border-white/20 text-white/60 hover:border-gold-main hover:text-gold-main"
+                      ? "bg-gold-main border-gold-main text-charcoal shadow-gold-sm"
+                      : "bg-white/5 border-white/10 text-white/60 hover:border-gold-main/50 hover:text-white"
                   }`}
                 >
                   {cat}
                 </button>
               ))}
-            </div>
+            </motion.div>
           </ScrollReveal>
         </div>
+
+        {/* Subtle Bottom Border Detail */}
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-main/30 to-transparent" />
       </section>
 
       {/* Grid */}
@@ -91,7 +117,7 @@ const GalleryPage = () => {
                     />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                    <span className="text-gold-main text-xs font-mono font-bold uppercase tracking-widest mb-2 block">
+                    <span className="text-gold-main text-[10px] font-bold uppercase tracking-[0.3em] mb-2 block">
                       {image.category}
                     </span>
                     <h4 className="text-white text-xl font-heading font-bold">{image.title}</h4>
@@ -128,7 +154,7 @@ const GalleryPage = () => {
                 </div>
 
                 <div className="mt-8 text-center text-white">
-                  <span className="text-gold-main text-xs font-mono font-bold uppercase tracking-widest mb-2 block">
+                  <span className="text-gold-main text-[10px] font-bold uppercase tracking-[0.3em] mb-2 block">
                     {filteredImages[selectedImage].category}
                   </span>
                   <h3 className="text-3xl font-heading font-bold">{filteredImages[selectedImage].title}</h3>
