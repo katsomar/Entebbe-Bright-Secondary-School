@@ -16,7 +16,7 @@ const WhoWeAreSection = () => {
           {/* Left: Image with floating badges */}
           <div className="relative">
             <ScrollReveal direction="left">
-              <div className="relative rounded-2xl overflow-hidden shadow-gold-lg border-4 border-white">
+              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-gold-lg border-8 border-white">
                 <Image
                   src="/wwa/wwa1.png"
                   alt="School Campus"
@@ -24,7 +24,8 @@ const WhoWeAreSection = () => {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gold-main/10" />
+                <div className="absolute inset-0 bg-charcoal/20" />
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 to-transparent" />
               </div>
             </ScrollReveal>
 
