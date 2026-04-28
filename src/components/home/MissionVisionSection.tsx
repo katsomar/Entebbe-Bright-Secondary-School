@@ -62,20 +62,122 @@ const MissionVisionSection = () => {
           </ScrollReveal>
         </div>
 
-        {/* Core Values */}
-        <div className="flex flex-wrap justify-center gap-6">
-          {[
-            { icon: Gem, label: "Integrity" },
-            { icon: Award, label: "Excellence" },
-            { icon: Lightbulb, label: "Innovation" },
-          ].map((item, i) => (
-            <ScrollReveal key={i} delay={i * 0.2}>
-              <div className="flex items-center space-x-3 bg-white px-8 py-4 rounded-full shadow-sm border border-gold-main/10 group hover:shadow-gold-sm hover:-translate-y-1 transition-all duration-300">
-                <item.icon className="text-gold-main group-hover:scale-110 transition-transform" size={24} />
-                <span className="font-bold text-charcoal tracking-wide">{item.label}</span>
-              </div>
-            </ScrollReveal>
-          ))}
+        {/* Core Values with Animated Arrow Effect */}
+        <div className="relative max-w-fit mx-auto px-12">
+          {/* Subtle Path Line */}
+          <div className="absolute top-1/2 left-0 right-0 h-px bg-gold-main/5 -translate-y-1/2 z-0" />
+          
+          {/* Moving Arrow */}
+          <motion.div
+            initial={{ left: "-5%", width: "0%", opacity: 0 }}
+            whileInView={{
+              left: ["-5%", "105%"],
+              width: ["0%", "20%", "0%"],
+              opacity: [0, 1, 1, 0]
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "linear",
+              repeatDelay: 1.5
+            }}
+            className="absolute top-1/2 h-px bg-gradient-to-r from-transparent via-gold-main/50 to-gold-bright -translate-y-1/2 z-0"
+          >
+            {/* Arrow Head */}
+            <div 
+              className="absolute right-0 top-1/2 -translate-y-1/2 w-0 h-0 
+              border-y-[3px] border-y-transparent 
+              border-l-[6px] border-l-gold-bright
+              shadow-[0_0_10px_rgba(255,215,0,0.8)]" 
+            />
+            {/* Glow Point */}
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1 h-1 bg-white rounded-full blur-[1px]" />
+          </motion.div>
+
+          <div className="flex flex-wrap justify-center gap-6 relative z-10">
+            {[
+              { icon: Gem, label: "Integrity" },
+              { icon: Award, label: "Excellence" },
+              { icon: Lightbulb, label: "Innovation" },
+            ].map((item, i) => (
+              <ScrollReveal key={i} delay={i * 0.2}>
+                <div className="relative group">
+                  {/* Premium Energy Orb Trace */}
+                  <div className="absolute -inset-[4px] pointer-events-none z-0">
+                    <svg className="w-full h-full overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none">
+                      {/* Outer Glow Layer */}
+                      <motion.rect
+                        x="0"
+                        y="0"
+                        width="100"
+                        height="100"
+                        rx="50"
+                        fill="none"
+                        stroke="#FF8C00"
+                        strokeWidth="12"
+                        strokeLinecap="round"
+                        pathLength={1}
+                        strokeDasharray="0 1"
+                        className="opacity-40 blur-[4px]"
+                        animate={{ strokeDashoffset: [0, -1] }}
+                        transition={{
+                          duration: 4,
+                          repeat: Infinity,
+                          ease: "linear"
+                        }}
+                      />
+                      {/* Secondary Glow */}
+                      <motion.rect
+                        x="0"
+                        y="0"
+                        width="100"
+                        height="100"
+                        rx="50"
+                        fill="none"
+                        stroke="#FFD700"
+                        strokeWidth="6"
+                        strokeLinecap="round"
+                        pathLength={1}
+                        strokeDasharray="0 1"
+                        className="opacity-60 blur-[1px]"
+                        animate={{ strokeDashoffset: [0, -1] }}
+                        transition={{
+                          duration: 4,
+                          repeat: Infinity,
+                          ease: "linear"
+                        }}
+                      />
+                      {/* Bright Core */}
+                      <motion.rect
+                        x="0"
+                        y="0"
+                        width="100"
+                        height="100"
+                        rx="50"
+                        fill="none"
+                        stroke="#FFFFFF"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        pathLength={1}
+                        strokeDasharray="0 1"
+                        animate={{ strokeDashoffset: [0, -1] }}
+                        transition={{
+                          duration: 4,
+                          repeat: Infinity,
+                          ease: "linear"
+                        }}
+                      />
+                    </svg>
+                  </div>
+
+                  <div className="flex items-center space-x-3 bg-white/90 backdrop-blur-sm px-8 py-4 rounded-full shadow-sm border border-gold-main/10 group-hover:shadow-gold-sm group-hover:-translate-y-1 transition-all duration-300 relative z-10">
+                    <item.icon className="text-gold-main group-hover:scale-110 transition-transform" size={24} />
+                    <span className="font-bold text-charcoal tracking-wide">{item.label}</span>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>
