@@ -32,31 +32,50 @@ const curriculum = {
 
 const AcademicsPage = () => {
   return (
-    <div className="pt-24 flex flex-col">
+    <div className="bg-white selection:bg-gold-main/30">
       {/* Hero */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[55vh] flex items-center justify-center overflow-hidden bg-charcoal pt-24">
         <Image
           src="/hero/h1.png"
           alt="Academics Hero"
           fill
           sizes="100vw"
-          className="object-cover"
+          className="object-cover opacity-50"
+          priority
         />
-        <div className="absolute inset-0 bg-charcoal/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-transparent to-charcoal" />
+        
         <div className="container mx-auto px-6 relative z-10 text-center">
-          <ScrollReveal direction="down">
-            <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-6">
-              Academic <span className="text-gold-main italic">Excellence</span>
-            </h1>
-            <div className="flex flex-wrap justify-center gap-4 mt-8">
+          <ScrollReveal>
+            {/* Elegant Letter Reveal (Matching About Page Style) */}
+            <div className="overflow-hidden mb-4">
+              <motion.h1 
+                initial={{ y: 80 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                className="text-5xl md:text-8xl font-display font-bold text-white leading-none"
+              >
+                Academic <span className="text-gold-main italic">Excellence</span>
+              </motion.h1>
+            </div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="flex flex-wrap justify-center gap-4 mt-10"
+            >
               {["S1 – S6", "National Curriculum", "UNEB Certified"].map((stat) => (
-                <span key={stat} className="px-6 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-white text-sm font-mono uppercase tracking-widest">
+                <span key={stat} className="px-6 py-2 bg-white/5 backdrop-blur-md rounded-full border border-white/20 text-white text-[10px] font-bold uppercase tracking-[0.3em]">
                   {stat}
                 </span>
               ))}
-            </div>
+            </motion.div>
           </ScrollReveal>
         </div>
+        
+        {/* Subtle Bottom Border Detail */}
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-main/30 to-transparent" />
       </section>
 
       {/* Curriculum Tabs */}
