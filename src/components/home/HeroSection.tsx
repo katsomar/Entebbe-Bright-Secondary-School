@@ -51,25 +51,26 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-charcoal">
       {/* Background Slideshow */}
       <div className="absolute inset-0 z-0">
-        <AnimatePresence mode="wait">
+        <AnimatePresence initial={false}>
           <motion.div
             key={currentImage}
-            initial={{ opacity: 0, scale: 1.1 }}
+            initial={{ opacity: 0, scale: 1.05 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
+            transition={{ duration: 4, ease: [0.4, 0, 0.2, 1] }}
             className="absolute inset-0"
           >
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${heroImages[currentImage]})` }}
             />
-            <div className="absolute inset-0 bg-gradient-hero opacity-70" />
           </motion.div>
         </AnimatePresence>
+        {/* Permanent Overlay for constant contrast and "soft" look */}
+        <div className="absolute inset-0 bg-gradient-hero opacity-80 z-10" />
       </div>
 
       {/* Content */}
