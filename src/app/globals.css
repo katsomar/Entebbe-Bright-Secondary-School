@@ -73,7 +73,7 @@
   --charcoal: #1C1A14;
   --text-muted: #6B5E3E;
   --gradient-hero: linear-gradient(135deg, #1C1208 0%, #3D2A00 40%, #1A2E12 100%);
-  --gradient-gold: linear-gradient(90deg, #B8860B, #FFD700, #F07820);
+  --gradient-gold: linear-gradient(90deg, #F07820, #FFB347, #D4AF37);
   --gradient-section: linear-gradient(180deg, #FFFDF5 0%, #FFF8E7 100%);
 }
 

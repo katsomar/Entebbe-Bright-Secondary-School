@@ -124,20 +124,20 @@ const HeroSection = () => {
         <div className="flex animate-marquee whitespace-nowrap">
           {[1, 2, 3, 4].map((i) => (
             <div key={i} className="flex items-center space-x-12 px-12">
-              <span className="text-gold-main font-mono text-sm tracking-widest flex items-center">
-                <span className="w-2 h-2 bg-gold-main rounded-full mr-3 animate-pulse" />
+              <span className="text-orange-main font-body text-[10px] font-bold tracking-[0.4em] flex items-center">
+                <span className="w-1.5 h-1.5 bg-orange-main rounded-full mr-3 animate-pulse" />
                 EXCELLENCE
               </span>
-              <span className="text-gold-main font-mono text-sm tracking-widest flex items-center">
-                <span className="w-2 h-2 bg-gold-main rounded-full mr-3 animate-pulse" />
+              <span className="text-orange-main font-body text-[10px] font-bold tracking-[0.4em] flex items-center">
+                <span className="w-1.5 h-1.5 bg-orange-main rounded-full mr-3 animate-pulse" />
                 INNOVATION
               </span>
-              <span className="text-gold-main font-mono text-sm tracking-widest flex items-center">
-                <span className="w-2 h-2 bg-gold-main rounded-full mr-3 animate-pulse" />
+              <span className="text-orange-main font-body text-[10px] font-bold tracking-[0.4em] flex items-center">
+                <span className="w-1.5 h-1.5 bg-orange-main rounded-full mr-3 animate-pulse" />
                 CHARACTER
               </span>
-              <span className="text-gold-main font-mono text-sm tracking-widest flex items-center">
-                <span className="w-2 h-2 bg-gold-main rounded-full mr-3 animate-pulse" />
+              <span className="text-orange-main font-body text-[10px] font-bold tracking-[0.4em] flex items-center">
+                <span className="w-1.5 h-1.5 bg-orange-main rounded-full mr-3 animate-pulse" />
                 COMMUNITY
               </span>
             </div>
@@ -149,7 +149,7 @@ const HeroSection = () => {
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-20 left-1/2 -translate-x-1/2 text-white/50 cursor-pointer hover:text-gold-main transition-colors"
+        className="absolute bottom-20 left-1/2 -translate-x-1/2 text-white/50 cursor-pointer hover:text-orange-main transition-colors"
       >
         <ChevronDown size={32} />
       </motion.div>
@@ -160,7 +160,7 @@ const HeroSection = () => {
           {[...Array(20)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 bg-gold-bright rounded-full"
+              className="absolute w-1 h-1 bg-orange-light rounded-full"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,

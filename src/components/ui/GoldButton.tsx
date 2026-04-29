@@ -24,9 +24,9 @@ const GoldButton = ({
   const baseStyles = "inline-flex items-center justify-center rounded-full font-semibold transition-all duration-300 focus:outline-none";
   
   const variants = {
-    solid: "bg-gold-main text-charcoal shadow-sm hover:bg-gold-deep hover:shadow-gold-sm hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300",
-    outline: "bg-transparent border-2 border-gold-main text-gold-main hover:bg-gold-main hover:text-charcoal",
-    ghost: "bg-transparent text-gold-main hover:bg-gold-light/20",
+    solid: "bg-orange-main text-white shadow-sm hover:bg-orange-deep hover:shadow-orange-sm hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300",
+    outline: "bg-transparent border-2 border-orange-main text-orange-main hover:bg-orange-main hover:text-white",
+    ghost: "bg-transparent text-orange-main hover:bg-orange-main/10",
   };
 
   const sizes = {

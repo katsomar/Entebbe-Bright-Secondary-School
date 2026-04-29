@@ -6,7 +6,7 @@ interface SectionLabelProps {
 
 const SectionLabel = ({ children }: SectionLabelProps) => {
   return (
-    <span className="inline-block px-4 py-1 mb-4 text-xs font-bold tracking-widest uppercase rounded-full bg-green-school/10 text-gold-deep border border-gold-main/20 font-mono">
+    <span className="inline-block px-5 py-1.5 mb-6 text-[10px] font-bold tracking-[0.3em] uppercase rounded-full bg-orange-main/10 text-orange-main border border-orange-main/20">
       {children}
     </span>
   );

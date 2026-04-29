@@ -34,24 +34,24 @@ const WhoWeAreSection = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5 }}
-              className="absolute -top-6 -right-6 bg-charcoal p-6 rounded-2xl shadow-xl border border-gold-main z-20 hidden md:block"
+              className="absolute -top-6 -right-6 bg-charcoal p-6 rounded-2xl shadow-xl border border-orange-main z-20 hidden md:block"
             >
-              <div className="text-gold-main font-display text-3xl font-bold">Est. 1994</div>
-              <div className="text-white/60 text-xs font-mono tracking-widest uppercase">Legacy of Excellence</div>
+              <div className="text-orange-main font-display text-3xl font-bold">Est. 1994</div>
+              <div className="text-white/60 text-[10px] font-bold tracking-[0.3em] uppercase">Legacy of Excellence</div>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.7 }}
-              className="absolute -bottom-10 -left-10 bg-white p-6 rounded-2xl shadow-gold-md z-20 flex items-center space-x-4 border border-gold-main/20 hidden md:flex"
+              className="absolute -bottom-10 -left-10 bg-white p-6 rounded-2xl shadow-2xl z-20 flex items-center space-x-4 border border-orange-main/20 hidden md:flex"
             >
               <div className="w-12 h-12 bg-green-school/10 rounded-full flex items-center justify-center text-green-school">
                 <ShieldCheck size={28} />
               </div>
               <div>
                 <div className="text-charcoal font-bold">Top Performing School</div>
-                <div className="text-gold-deep text-sm font-mono italic">UNEB Certified Excellence</div>
+                <div className="text-orange-main text-sm font-body italic">UNEB Certified Excellence</div>
               </div>
             </motion.div>
           </div>
@@ -61,7 +61,7 @@ const WhoWeAreSection = () => {
             <ScrollReveal direction="right">
               <SectionLabel>WHO WE ARE</SectionLabel>
               <h2 className="text-4xl md:text-5xl font-heading font-bold text-charcoal mb-6 leading-tight">
-                A Tradition of <span className="text-gold-deep italic">Academic Excellence</span> and Character Building.
+                A Tradition of <span className="text-orange-main italic">Academic Excellence</span> and Character Building.
               </h2>
               <p className="text-text-muted text-lg leading-relaxed mb-8">
                 Entebbe Bright Secondary School is more than just an educational institution. It is a sanctuary of learning where we nurture young minds to become innovative thinkers, ethical leaders, and responsible global citizens.
@@ -69,7 +69,7 @@ const WhoWeAreSection = () => {
 
               <div className="space-y-6 mb-10">
                 <div className="flex items-start space-x-4 group">
-                  <div className="mt-1 bg-gold-main/10 p-2 rounded-lg text-gold-deep group-hover:bg-gold-main group-hover:text-white transition-colors">
+                  <div className="mt-1 bg-orange-main/10 p-2 rounded-lg text-orange-main group-hover:bg-orange-main group-hover:text-white transition-colors">
                     <GraduationCap size={20} />
                   </div>
                   <div>
@@ -79,7 +79,7 @@ const WhoWeAreSection = () => {
                 </div>
 
                 <div className="flex items-start space-x-4 group">
-                  <div className="mt-1 bg-gold-main/10 p-2 rounded-lg text-gold-deep group-hover:bg-gold-main group-hover:text-white transition-colors">
+                  <div className="mt-1 bg-orange-main/10 p-2 rounded-lg text-orange-main group-hover:bg-orange-main group-hover:text-white transition-colors">
                     <CheckCircle2 size={20} />
                   </div>
                   <div>
@@ -89,7 +89,7 @@ const WhoWeAreSection = () => {
                 </div>
 
                 <div className="flex items-start space-x-4 group">
-                  <div className="mt-1 bg-gold-main/10 p-2 rounded-lg text-gold-deep group-hover:bg-gold-main group-hover:text-white transition-colors">
+                  <div className="mt-1 bg-orange-main/10 p-2 rounded-lg text-orange-main group-hover:bg-orange-main group-hover:text-white transition-colors">
                     <ShieldCheck size={20} />
                   </div>
                   <div>
