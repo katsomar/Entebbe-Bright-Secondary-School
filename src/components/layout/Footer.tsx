@@ -28,7 +28,10 @@ const Footer = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ 
+          type: "newsletter",
+          email 
+        }),
       });
 
       setStatus("success");

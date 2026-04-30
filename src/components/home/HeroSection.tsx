@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
+import Link from "next/link";
 import GoldButton from "@/components/ui/GoldButton";
 import { ChevronDown } from "lucide-react";
 
@@ -109,12 +110,16 @@ const HeroSection = () => {
             variants={wordVariants}
             className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6"
           >
-            <GoldButton size="lg" className="w-full sm:w-auto">
-              Explore Our School
-            </GoldButton>
-            <GoldButton variant="outline" size="lg" className="w-full sm:w-auto text-white border-white/30 hover:border-white">
-              Apply Now
-            </GoldButton>
+            <Link href="/about" className="w-full sm:w-auto">
+              <GoldButton size="lg" className="w-full">
+                Explore Our School
+              </GoldButton>
+            </Link>
+            <Link href="/apply" className="w-full sm:w-auto">
+              <GoldButton variant="outline" size="lg" className="w-full text-white border-white/30 hover:border-white">
+                Apply Now
+              </GoldButton>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

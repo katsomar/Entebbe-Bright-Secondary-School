@@ -84,7 +84,9 @@ const Navbar = () => {
 
           {/* CTA */}
           <div className="hidden lg:block">
-            <GoldButton size="sm">Apply Now</GoldButton>
+            <Link href="/apply">
+              <GoldButton size="sm">Apply Now</GoldButton>
+            </Link>
           </div>
 
           {/* Mobile Toggle */}
@@ -154,9 +156,11 @@ const Navbar = () => {
             </div>
 
             <div className="mt-auto">
-              <GoldButton className="w-full" size="lg">
-                Apply Now
-              </GoldButton>
+              <Link href="/apply" onClick={() => setIsMobileMenuOpen(false)}>
+                <GoldButton className="w-full" size="lg">
+                  Apply Now
+                </GoldButton>
+              </Link>
             </div>
           </motion.div>
         )}
