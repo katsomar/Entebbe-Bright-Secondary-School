@@ -1,11 +1,48 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, CheckCircle, AlertCircle } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { FaFacebook, FaXTwitter, FaInstagram, FaYoutube } from "react-icons/fa6";
 import GoldButton from "@/components/ui/GoldButton";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setStatus("loading");
+    
+    try {
+      // Use the provided Google Apps Script URL
+      const scriptURL = "https://script.google.com/macros/s/AKfycbzdji0g0xLW6_1-fL9X1ZxzY0edoSFEu6beowKR-xFznu3zK_ZhKgeewucWUzCDWu3M/exec";
+      
+      await fetch(scriptURL, {
+        method: "POST",
+        mode: "no-cors", // Required for Google Apps Script redirects
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      setStatus("success");
+      setEmail("");
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => setStatus("idle"), 5000);
+    } catch (error) {
+      console.error("Subscription error:", error);
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 5000);
+    }
+  };
+
   return (
     <footer className="bg-charcoal text-white pt-20 pb-10 border-t border-gold-main/20 relative overflow-hidden">
       {/* Decorative Background Element */}
@@ -96,14 +133,70 @@ const Footer = () => {
             <p className="text-white/60 text-sm mb-6">
               Subscribe to our newsletter for the latest news and campus updates.
             </p>
-            <form className="space-y-3">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="w-full px-4 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-gold-main transition-colors"
-              />
-              <GoldButton className="w-full py-3">Subscribe</GoldButton>
-            </form>
+            <AnimatePresence mode="wait">
+              {status === "success" ? (
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="bg-green-500/10 border border-green-500/20 rounded-2xl p-6 flex flex-col items-center text-center space-y-3"
+                >
+                  <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-charcoal shadow-lg shadow-green-500/20">
+                    <CheckCircle size={28} />
+                  </div>
+                  <h5 className="text-white font-bold text-lg">You're Subscribed!</h5>
+                  <p className="text-white/60 text-sm">
+                    Thank you for joining our community. We'll keep you updated with the latest news.
+                  </p>
+                  <button 
+                    onClick={() => setStatus("idle")}
+                    className="text-gold-main text-xs font-medium hover:underline pt-2"
+                  >
+                    Subscribe another email
+                  </button>
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="form"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                >
+                  <form onSubmit={handleSubmit} className="space-y-3">
+                    <div className="relative">
+                      <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Your email address"
+                        required
+                        disabled={status === "loading"}
+                        className="w-full px-4 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-gold-main transition-colors disabled:opacity-50"
+                      />
+                      {status === "error" && (
+                        <div className="absolute -bottom-6 left-0 flex items-center text-red-400 text-[10px] uppercase tracking-wider font-bold">
+                          <AlertCircle size={12} className="mr-1" />
+                          Something went wrong. Try again.
+                        </div>
+                      )}
+                    </div>
+                    <GoldButton 
+                      type="submit" 
+                      className="w-full py-3"
+                      disabled={status === "loading"}
+                    >
+                      {status === "loading" ? (
+                        <div className="flex items-center justify-center">
+                          <div className="w-4 h-4 border-2 border-charcoal/30 border-t-charcoal rounded-full animate-spin mr-2" />
+                          Subscribing...
+                        </div>
+                      ) : "Subscribe"}
+                    </GoldButton>
+                  </form>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
 
