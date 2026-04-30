@@ -27,8 +27,11 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Entebbe Bright Secondary School | Shaping Tomorrow's Leaders",
+  title: "Entebbe Bright S.S | Shaping Tomorrow's Leaders",
   description: "A world-class, premium educational institution dedicated to excellence, innovation, and character building in Entebbe.",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({
