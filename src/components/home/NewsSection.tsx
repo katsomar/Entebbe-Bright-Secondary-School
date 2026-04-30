@@ -178,9 +178,11 @@ const NewsSection = () => {
         </AnimatePresence>
 
         <div className="mt-20 text-center">
-          <GoldButton variant="outline" className="px-12">
-            Explore Full Archive →
-          </GoldButton>
+          <Link href="/gallery">
+            <GoldButton variant="outline" className="px-12">
+              Explore Full Archive →
+            </GoldButton>
+          </Link>
         </div>
       </div>
     </section>
