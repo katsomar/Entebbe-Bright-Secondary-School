@@ -113,7 +113,7 @@ const Footer = () => {
             <Link href="#" className="hover:text-gold-main transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-gold-main transition-colors">Terms of Service</Link>
           </div>
-          <p className="mt-4 md:mt-0">
+          <div className="mt-4 md:mt-0">
             Developed by{" "}
             <Link 
               href="https://skyrix-techologies.vercel.app/" 
@@ -126,12 +126,13 @@ const Footer = () => {
                   src="/hero/dark.png"
                   alt="Skyrix Logo"
                   fill
+                  sizes="20px"
                   className="object-contain"
                 />
               </div>
               Skyrix Technologies
             </Link>
-          </p>
+          </div>
         </div>
       </div>
     </footer>

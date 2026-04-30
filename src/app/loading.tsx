@@ -17,6 +17,7 @@ export default function Loading() {
             src="/hero/logo.png"
             alt="Logo"
             fill
+            sizes="96px"
             className="object-contain animate-pulse"
           />
         </div>

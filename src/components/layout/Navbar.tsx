@@ -45,6 +45,7 @@ const Navbar = () => {
                 src="/hero/logo.png"
                 alt="Entebbe Bright Secondary School Logo"
                 fill
+                sizes="(max-width: 768px) 40px, 48px"
                 className="object-contain"
                 priority
               />
@@ -113,6 +114,7 @@ const Navbar = () => {
                     src="/hero/logo.png"
                     alt="Entebbe Bright Secondary School Logo"
                     fill
+                    sizes="40px"
                     className="object-contain"
                   />
                 </div>
