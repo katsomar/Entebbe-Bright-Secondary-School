@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Loading() {
   return (
@@ -11,8 +12,13 @@ export default function Loading() {
         transition={{ duration: 0.5 }}
         className="flex flex-col items-center"
       >
-        <div className="w-20 h-20 bg-gradient-gold rounded-2xl flex items-center justify-center font-bold text-charcoal text-3xl mb-8 shadow-gold-glow animate-pulse">
-          EB
+        <div className="relative w-24 h-24 mb-8">
+          <Image
+            src="/hero/logo.png"
+            alt="Logo"
+            fill
+            className="object-contain animate-pulse"
+          />
         </div>
         <div className="w-48 h-1 bg-white/10 rounded-full overflow-hidden relative">
           <motion.div
