@@ -3,17 +3,17 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronRight } from "lucide-react";
+import { Menu, X, ChevronRight, Home, Info, BookOpen, Image as ImageIcon, CreditCard, Phone } from "lucide-react";
 import Image from "next/image";
 import GoldButton from "@/components/ui/GoldButton";
 
 const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About Us", href: "/about" },
-  { name: "Academics", href: "/academics" },
-  { name: "Gallery", href: "/gallery" },
-  { name: "Tuition", href: "/tuition" },
-  { name: "Contact", href: "/#contact" },
+  { name: "Home", href: "/", icon: Home },
+  { name: "About Us", href: "/about", icon: Info },
+  { name: "Academics", href: "/academics", icon: BookOpen },
+  { name: "Gallery", href: "/gallery", icon: ImageIcon },
+  { name: "Tuition", href: "/tuition", icon: CreditCard },
+  { name: "Contact", href: "/#contact", icon: Phone },
 ];
 
 const Navbar = () => {
@@ -65,11 +65,12 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`relative text-sm font-medium transition-colors hover:text-gold-bright ${
+                className={`relative text-sm font-medium transition-colors hover:text-gold-bright flex items-center space-x-1.5 ${
                   isScrolled ? "text-white/80" : "text-white/90"
                 }`}
               >
-                {link.name}
+                <link.icon size={16} className="text-gold-main/60" />
+                <span>{link.name}</span>
                 <motion.div
                   className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gold-main"
                   initial={{ scaleX: 0 }}
@@ -138,10 +139,13 @@ const Navbar = () => {
                   <Link
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-3xl font-heading text-white hover:text-gold-main flex items-center justify-between group"
+                    className="text-3xl font-heading text-white hover:text-gold-main flex items-center group"
                   >
-                    {link.name}
-                    <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity text-gold-main" />
+                    <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mr-4 group-hover:bg-gold-main/20 transition-colors">
+                      <link.icon size={24} className="text-gold-main" />
+                    </div>
+                    <span>{link.name}</span>
+                    <ChevronRight className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity text-gold-main" />
                   </Link>
                 </motion.div>
               ))}
