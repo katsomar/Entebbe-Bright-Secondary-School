@@ -10,6 +10,9 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 const ApplyPage = () => {
+  const currentYear = new Date().getFullYear();
+  const academicYear = currentYear + 1;
+
   const [formData, setFormData] = useState({
     studentName: "",
     parentName: "",
@@ -111,7 +114,7 @@ const ApplyPage = () => {
               Apply <span className="text-gold-main">Online</span>.
             </h1>
             <p className="text-white/70 text-lg md:text-xl leading-relaxed max-w-xl font-light">
-              Submit your application for the 2026 academic year. Please ensure all details are accurate before submission.
+              Submit your application for the {academicYear} academic year. Please ensure all details are accurate before submission.
             </p>
           </div>
         </div>
@@ -169,7 +172,7 @@ const ApplyPage = () => {
                         {[
                           { icon: GraduationCap, title: "Academic Record", desc: "Original copies of previous school reports and UNEB results." },
                           { icon: ShieldCheck, title: "Character", desc: "A recommendation letter from the head of your previous institution." },
-                          { icon: Clock, title: "Deadline", desc: "Applications for the first intake close on December 15th, 2025." }
+                          { icon: Clock, title: "Deadline", desc: `Applications for the first intake close on December 15th, ${currentYear}.` }
                         ].map((item, i) => (
                           <div key={i} className="flex items-start space-x-5">
                             <item.icon size={20} className="text-gold-main mt-1 flex-shrink-0" />
