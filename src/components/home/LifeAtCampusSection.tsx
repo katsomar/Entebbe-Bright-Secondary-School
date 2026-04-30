@@ -68,7 +68,11 @@ const LifeAtCampusSection = () => {
               <p className="text-white/60 text-lg leading-relaxed md:text-left md:border-l border-gold-main/30 md:pl-8">
                 Experience a world of opportunities where character is built, talents are discovered, and lifelong friendships are forged in a futuristic environment.
               </p>
-              <GoldButton variant="outline" className="border-gold-main/30 text-white hover:bg-gold-main hover:text-charcoal flex-shrink-0">
+              <GoldButton 
+                variant="outline" 
+                className="border-gold-main/30 text-white hover:bg-gold-main hover:text-charcoal flex-shrink-0"
+                onClick={() => window.location.href = "/gallery"}
+              >
                 Full Gallery →
               </GoldButton>
             </div>
