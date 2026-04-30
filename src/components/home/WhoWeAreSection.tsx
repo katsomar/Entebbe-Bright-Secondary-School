@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import SectionLabel from "@/components/ui/SectionLabel";
 import GoldButton from "@/components/ui/GoldButton";
@@ -99,7 +100,9 @@ const WhoWeAreSection = () => {
                 </div>
               </div>
 
-              <GoldButton size="lg">Learn More About Us →</GoldButton>
+              <Link href="/about">
+                <GoldButton size="lg">Learn More About Us →</GoldButton>
+              </Link>
             </ScrollReveal>
           </div>
         </div>
