@@ -36,7 +36,7 @@ const MissionVisionSection = () => {
               <h3 className="text-white font-heading text-3xl font-bold mb-4">Our Mission</h3>
               <div className="w-16 h-1 bg-gold-main mb-6 rounded-full" />
               <p className="text-white/70 text-lg leading-relaxed">
-                To provide a high-quality, inclusive education that empowers students with the knowledge, skills, and values necessary to excel academically and contribute meaningfully to a rapidly changing world.
+                To provide quality Education in a conducive enviroment that nurtures students into responsible citizens
               </p>
             </motion.div>
           </ScrollReveal>
@@ -56,7 +56,7 @@ const MissionVisionSection = () => {
               <h3 className="text-charcoal font-heading text-3xl font-bold mb-4">Our Vision</h3>
               <div className="w-16 h-1 bg-green-school mb-6 rounded-full" />
               <p className="text-text-muted text-lg leading-relaxed">
-                To be a premier center of academic excellence and character development, recognized globally for nurturing innovative leaders who transform society through integrity and excellence.
+                To be a leading Private Christian School in Uganda producing spiritually, disciplined, talented and self reliannt citizens who can fit in today's labour market.
               </p>
             </motion.div>
           </ScrollReveal>

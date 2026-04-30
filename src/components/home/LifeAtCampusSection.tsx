@@ -9,28 +9,28 @@ import GoldButton from "@/components/ui/GoldButton";
 
 const campusLife = [
   {
-    src: "/hero/h1.png",
+    src: "/screenshots/lab.png",
     alt: "Students in Classroom",
     category: "Academics",
     title: "Modern Learning Environments",
     className: "lg:col-span-2 lg:row-span-2",
   },
   {
-    src: "/hero/h2.png",
+    src: "/screenshots/sports.png",
     alt: "Sports Day",
     category: "Sports",
     title: "Athletic Excellence",
     className: "lg:col-span-1 lg:row-span-1",
   },
   {
-    src: "/hero/h3.png",
+    src: "/screenshots/lab.png",
     alt: "Science Lab",
     category: "Innovation",
     title: "Practical Discovery",
     className: "lg:col-span-1 lg:row-span-1",
   },
   {
-    src: "/wwa/wwa1.png",
+    src: "/screenshots/schoolpci.png",
     alt: "School Library",
     category: "Library",
     title: "Infinite Knowledge",

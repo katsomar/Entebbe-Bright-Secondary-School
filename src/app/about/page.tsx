@@ -10,22 +10,22 @@ import GoldButton from "@/components/ui/GoldButton";
 
 const leadership = [
   {
-    name: "Dr. Richard Ssekandi",
+    name: "Madam Grace",
     role: "Director",
-    image: "/hero/h1.png",
-    quote: "Our goal is to create a generation of thinkers who are not afraid to challenge the status quo and lead with integrity.",
+    image: "/screenshots/director.png",
+    quote: "Praise the Lord. I welcome you to our online platform. At Entebbe Bright Secondary School, we believe that academic excellence is not achieved by chance, but through hard work, discipline, and unwavering faith in God. As Directress, I am proud to witness the dedication of our students, teachers, and parents in building a strong academic foundation that prepares learners for a successful future. ",
   },
   {
-    name: "Mrs. Alice Namutebi",
-    role: "Principal",
-    image: "/hero/h2.png",
-    quote: "Academic excellence is the foundation, but character development is the soul of Entebbe Bright Secondary School.",
-  },
-  {
-    name: "Mr. Joseph Okello",
+    name: "Mr Welaga Ronald",
     role: "Head Teacher",
-    image: "/hero/h3.png",
-    quote: "We believe in the potential of every student. Our role is to provide the spark that ignites their passion for discovery.",
+    image: "/screenshots/directoress.png",
+    quote: "It is with great pride and gratitude that I welcome you to Entebbe Bright Secondary School, a center of academic excellence, discipline, and holistic development. Our school is built on strong Christian values, and we strive to nurture learners who are not only academically competent but also morally upright, spiritually grounded, and socially responsible.",
+  },
+  {
+    name: "Mr. Owolo John",
+    role: "Deputy Head Teacher",
+    image: "/screenshots/deputy.png",
+    quote: "Welcome to our school’s online home, where we celebrate excellence, discipline, and holistic development. We are grateful for your continued trust in Entebbe Bright Secondary School to nurture and educate your children. It is our joy and responsibility to provide a safe, disciplined, and inspiring environment that helps every learner achieve their full potential.",
   },
 ];
 
@@ -136,7 +136,7 @@ const AboutPage = () => {
                   Building a Foundation of <span className="text-gold-main italic">Brilliance</span>.
                 </h2>
                 <p className="text-charcoal/60 text-xl font-body leading-relaxed mb-8">
-                  Founded in the heart of Entebbe, our institution began with a simple yet powerful mission: to provide world-class education that balances academic rigor with moral integrity.
+                  Entebbe Bright Secondary School is located in Nkumba–Bufuulu, along Kisembi Road, approximately 5 kilometers from the Entebbe–Kampala Expressway. It is situated off the main Entebbe Road near Mulangila Boda Stage, in Entebbe Municipality, Wakiso District, within the Central Region of Uganda. The school is easily accessible via  Kampala–Entebbe Road in abaita ababiri town. It is a mixed day and boarding secondary school offering both O-Level and A-Level education. Founded on Christian values, the school welcomes students from all religious backgrounds.
                 </p>
                 <div className="space-y-6">
                   <div className="flex items-start space-x-6 p-6 rounded-3xl bg-cream/50 border border-gold-main/10 hover:border-gold-main/30 transition-all">
