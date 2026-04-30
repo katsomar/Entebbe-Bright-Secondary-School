@@ -59,8 +59,6 @@ const ApplyPage = () => {
 
   return (
     <main className="min-h-screen bg-[#fcf8f1] relative overflow-hidden">
-      <Navbar />
-      
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.03]" style={{ backgroundImage: `radial-gradient(#1a1a1a 1px, transparent 1px)`, backgroundSize: "40px 40px" }} />
       
@@ -114,7 +112,7 @@ const ApplyPage = () => {
               Apply <span className="text-gold-main">Online</span>.
             </h1>
             <p className="text-white/70 text-lg md:text-xl leading-relaxed max-w-xl font-light">
-              Submit your application for the {academicYear} academic year. Please ensure all details are accurate before submission.
+              Submit your application for the {currentYear} academic year. Please ensure all details are accurate before submission.
             </p>
           </div>
         </div>
@@ -341,8 +339,6 @@ const ApplyPage = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 };
