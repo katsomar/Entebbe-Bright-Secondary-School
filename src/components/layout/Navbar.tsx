@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronRight } from "lucide-react";
+import Image from "next/image";
 import GoldButton from "@/components/ui/GoldButton";
 
 const navLinks = [
@@ -38,12 +39,18 @@ const Navbar = () => {
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-orange-main rounded-lg flex items-center justify-center font-bold text-white text-xl shadow-lg shadow-orange-main/20">
-              EB
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="relative w-12 h-12 transition-transform duration-300 group-hover:scale-110">
+              <Image
+                src="/hero/logo.png"
+                alt="Entebbe Bright Secondary School Logo"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
             <div className="flex flex-col">
-              <span className={`font-display font-bold leading-none ${isScrolled ? "text-white" : "text-white"}`}>
+              <span className={`font-display font-bold leading-tight ${isScrolled ? "text-white" : "text-white"}`}>
                 ENTEBBE BRIGHT
               </span>
               <span className="text-[10px] text-gold-main tracking-[0.2em] font-mono uppercase">
@@ -99,9 +106,14 @@ const Navbar = () => {
             className="fixed inset-0 z-[60] bg-charcoal flex flex-col p-8"
           >
             <div className="flex justify-between items-center mb-12">
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-gold rounded flex items-center justify-center font-bold text-charcoal text-lg">
-                  EB
+              <div className="flex items-center space-x-3">
+                <div className="relative w-10 h-10">
+                  <Image
+                    src="/hero/logo.png"
+                    alt="Entebbe Bright Secondary School Logo"
+                    fill
+                    className="object-contain"
+                  />
                 </div>
                 <span className="font-display font-bold text-white text-xl">
                   ENTEBBE BRIGHT
