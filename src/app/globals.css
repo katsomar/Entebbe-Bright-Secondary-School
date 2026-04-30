@@ -105,3 +105,28 @@
 .bg-gradient-section {
   background: var(--gradient-section);
 }
+
+/* Custom Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--charcoal);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold-main);
+  border: 3px solid var(--charcoal);
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-bright);
+}
+
+/* Firefox Support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-main) var(--charcoal);
+}
