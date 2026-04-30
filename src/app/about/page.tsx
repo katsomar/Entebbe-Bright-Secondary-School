@@ -250,7 +250,12 @@ const AboutPage = () => {
                 Admissions for the 2026/2027 academic year are now open. Secure your child's future today.
               </p>
               <div className="flex flex-wrap justify-center gap-6">
-                <GoldButton className="px-12 py-5 text-lg">Apply for Admission</GoldButton>
+                <GoldButton 
+                  className="px-12 py-5 text-lg"
+                  onClick={() => window.location.href = "/apply"}
+                >
+                  Apply for Admission
+                </GoldButton>
                 <GoldButton variant="outline" className="px-12 py-5 text-lg border-white/20 text-white hover:bg-white hover:text-charcoal">Download Prospectus</GoldButton>
               </div>
             </ScrollReveal>
