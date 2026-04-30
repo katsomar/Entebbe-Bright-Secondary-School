@@ -113,7 +113,25 @@ const Footer = () => {
             <Link href="#" className="hover:text-gold-main transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-gold-main transition-colors">Terms of Service</Link>
           </div>
-          <p className="mt-4 md:mt-0">Designed with ❤️ for Excellence</p>
+          <p className="mt-4 md:mt-0">
+            Developed by{" "}
+            <Link 
+              href="https://skyrix-techologies.vercel.app/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gold-main hover:text-gold-bright transition-all duration-300 font-medium underline underline-offset-4 decoration-gold-main/30 inline-flex items-center group"
+            >
+              <div className="relative w-5 h-5 mr-1.5 opacity-80 group-hover:opacity-100 transition-opacity">
+                <Image
+                  src="/hero/dark.png"
+                  alt="Skyrix Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              Skyrix Technologies
+            </Link>
+          </p>
         </div>
       </div>
     </footer>
