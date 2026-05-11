@@ -7,21 +7,16 @@ import Image from "next/image";
 import GoldButton from "@/components/ui/GoldButton";
 import * as Tabs from "@radix-ui/react-tabs";
 import { motion } from "framer-motion";
-import { Book, Coffee, Bed, Activity, CheckCircle2, AlertCircle, Phone, Mail } from "lucide-react";
+import { Book, Building, CheckCircle2, AlertCircle, Phone, Mail } from "lucide-react";
 
 const feeData = {
-  primary: [
-    { class: "Primary 1 - 3", tuition: "500,000", meals: "150,000", total: "650,000" },
-    { class: "Primary 4 - 5", tuition: "600,000", meals: "150,000", total: "750,000" },
-    { class: "Primary 6 - 7", tuition: "700,000", meals: "200,000", total: "900,000" },
-  ],
   olevel: [
-    { class: "Senior 1 - 2", tuition: "850,000", meals: "250,000", total: "1,100,000" },
-    { class: "Senior 3 - 4", tuition: "950,000", meals: "250,000", total: "1,200,000" },
+    { class: "Senior 1 - 2", tuition: "850,000", total: "850,000" },
+    { class: "Senior 3 - 4", tuition: "950,000", total: "950,000" },
   ],
   alevel: [
-    { class: "Senior 5 - 6 (Arts)", tuition: "1,100,000", meals: "300,000", total: "1,400,000" },
-    { class: "Senior 5 - 6 (Sciences)", tuition: "1,250,000", meals: "300,000", total: "1,550,000" },
+    { class: "Senior 5 - 6 (Arts)", tuition: "1,100,000", total: "1,100,000" },
+    { class: "Senior 5 - 6 (Sciences)", tuition: "1,250,000", total: "1,250,000" },
   ],
 };
 
@@ -71,13 +66,13 @@ const TuitionPage = () => {
               <ScrollReveal>
                 <Tabs.Root defaultValue="olevel" className="w-full">
                   <Tabs.List className="flex space-x-2 bg-cream p-2 rounded-[2rem] border border-gold-main/10 mb-16 max-w-md">
-                    {["primary", "olevel", "alevel"].map((tab) => (
+                    {["olevel", "alevel"].map((tab) => (
                       <Tabs.Trigger
                         key={tab}
                         value={tab}
                         className="flex-1 px-8 py-3 rounded-[1.5rem] text-[10px] font-bold uppercase tracking-[0.2em] transition-all data-[state=active]:bg-charcoal data-[state=active]:text-white text-charcoal/40 hover:text-charcoal"
                       >
-                        {tab === "olevel" ? "O-Level" : tab === "alevel" ? "A-Level" : "Primary"}
+                        {tab === "olevel" ? "O-Level" : "A-Level"}
                       </Tabs.Trigger>
                     ))}
                   </Tabs.List>
@@ -97,12 +92,9 @@ const TuitionPage = () => {
                                 <span className="flex items-center text-charcoal/60 font-body"><Book size={20} className="mr-4 text-gold-main" /> Tuition Fee</span>
                                 <span className="font-bold text-charcoal tracking-tight">UGX {item.tuition}</span>
                               </div>
+
                               <div className="flex justify-between items-center py-4 border-b border-gold-main/10">
-                                <span className="flex items-center text-charcoal/60 font-body"><Coffee size={20} className="mr-4 text-gold-main" /> Meals & Snacks</span>
-                                <span className="font-bold text-charcoal tracking-tight">UGX {item.meals}</span>
-                              </div>
-                              <div className="flex justify-between items-center py-4 border-b border-gold-main/10">
-                                <span className="flex items-center text-charcoal/60 font-body"><Activity size={20} className="mr-4 text-gold-main" /> Activity Fee</span>
+                                <span className="flex items-center text-charcoal/60 font-body"><Building size={20} className="mr-4 text-gold-main" /> Development Fee</span>
                                 <span className="font-bold text-gold-main text-xs uppercase tracking-widest">Included</span>
                               </div>
                             </div>
@@ -164,94 +156,6 @@ const TuitionPage = () => {
         </div>
       </section>
 
-      {/* Meals & Nutrition Section - NEW */}
-      <section className="py-32 bg-cream relative overflow-hidden">
-        {/* Large Background "MENU" Watermark */}
-        <div className="absolute -right-20 top-1/2 -translate-y-1/2 text-[25vw] font-display font-black text-charcoal opacity-[0.03] select-none pointer-events-none rotate-90">
-          MENU
-        </div>
-
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-24">
-            <ScrollReveal>
-              <div className="flex items-center justify-center space-x-4 mb-6">
-                <div className="h-px w-10 bg-gold-main/40" />
-                <span className="text-gold-main font-body text-xs font-bold tracking-[0.3em] uppercase">Nutrition & Wellness</span>
-                <div className="h-px w-10 bg-gold-main/40" />
-              </div>
-              <h2 className="text-5xl md:text-7xl font-display font-bold text-charcoal leading-tight">
-                Our Weekly <span className="text-gold-main italic">Menu</span>.
-              </h2>
-            </ScrollReveal>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {[
-              {
-                title: "Breakfast",
-                icon: Coffee,
-                items: [
-                  { name: "African Spice Tea", desc: "Freshly brewed with ginger & lemon" },
-                  { name: "Fresh Assorted Bread", desc: "Whole grain and white selections" },
-                  { name: "Farm Eggs", desc: "Scrambled or boiled with garden herbs" },
-                  { name: "Seasonal Fruits", desc: "Organic pineapples and bananas" }
-                ]
-              },
-              {
-                title: "Lunch",
-                icon: Activity,
-                items: [
-                  { name: "Traditional Matooke", desc: "Steamed green bananas with G-nut sauce" },
-                  { name: "Grilled Chicken/Beef", desc: "Seasoned and slow-cooked to perfection" },
-                  { name: "Fresh Garden Salads", desc: "Crisp vegetables from our school garden" },
-                  { name: "Steamed Rice & Beans", desc: "Nutrient-rich staple for high energy" }
-                ]
-              },
-              {
-                title: "Evening & Extras",
-                icon: Bed,
-                items: [
-                  { name: "Vegetable Stews", desc: "Rich and comforting with garden carrots" },
-                  { name: "Pilau / Spaghetti", desc: "Student favorites served with love" },
-                  { name: "Hot Cocoa & Cookies", desc: "Evening wind-down after study hours" },
-                  { name: "Nutritional Support", desc: "Special dietary plans available" }
-                ]
-              }
-            ].map((cat, i) => (
-              <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="bg-white rounded-[3rem] p-12 shadow-sm border border-gold-main/10 hover:shadow-2xl transition-all duration-700 relative group overflow-hidden">
-                  <div className="absolute -top-6 -right-6 w-24 h-24 bg-gold-main/5 rounded-full flex items-center justify-center text-gold-main group-hover:bg-gold-main group-hover:text-white transition-all duration-500">
-                    <cat.icon size={40} />
-                  </div>
-                  
-                  <h3 className="text-3xl font-display font-bold text-charcoal mb-12 border-b border-gold-main/20 pb-6 inline-block">
-                    {cat.title}
-                  </h3>
-                  
-                  <div className="space-y-8">
-                    {cat.items.map((item, idx) => (
-                      <div key={idx} className="relative pl-6">
-                        <div className="absolute left-0 top-1.5 w-1.5 h-1.5 rounded-full bg-gold-main" />
-                        <h4 className="text-lg font-bold text-charcoal mb-1">{item.name}</h4>
-                        <p className="text-charcoal/50 text-sm font-body italic leading-relaxed">{item.desc}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          {/* Nutrition Quality Note */}
-          <ScrollReveal delay={0.4}>
-            <div className="mt-24 text-center max-w-2xl mx-auto">
-              <p className="text-charcoal/60 text-sm font-body leading-relaxed italic">
-                * Our meals are designed by professional nutritionists to ensure students receive a balanced diet that supports cognitive development and physical growth. We prioritize organic, farm-to-table ingredients sourced directly from local Entebbe farmers.
-              </p>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
     </div>
   );
 };

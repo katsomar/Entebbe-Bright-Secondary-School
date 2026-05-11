@@ -10,12 +10,6 @@ import { BookOpen, GraduationCap, Building, FlaskConical, Languages, Calculator,
 import GoldButton from "@/components/ui/GoldButton";
 
 const curriculum = {
-  primary: {
-    title: "Primary Education",
-    desc: "A solid foundation focused on literacy, numeracy, and basic life skills in a nurturing environment.",
-    subjects: ["English Language", "Mathematics", "Science", "Social Studies", "Religious Education", "Physical Education"],
-    image: "/hero/h1.png"
-  },
   olevel: {
     title: "O-Level (S1 - S4)",
     desc: "The Uganda National Curriculum designed to prepare students for the UCE examinations through diverse subject choices.",
@@ -106,7 +100,6 @@ const AcademicsPage = () => {
                 <ScrollReveal direction="left">
                   <Tabs.List className="flex flex-col space-y-4">
                     {[
-                      { id: "primary", label: "Primary Education", sub: "Foundation Years" },
                       { id: "olevel", label: "O-Level (S1-S4)", sub: "Core Development" },
                       { id: "alevel", label: "A-Level (S5-S6)", sub: "Advanced Specialization" }
                     ].map((tab) => (
